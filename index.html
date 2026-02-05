@@ -80,14 +80,16 @@
               <a href="#om" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Om</a>
               <a href="#besok" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Besök</a>
               <a href="#viner" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Våra viner</a>
+              <a href="#nyhetsbrev" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Nyhetsbrev</a>
               <a href="#kontakt" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Kontakt</a>
             </div>
 
-            <!-- English links (FIXED: no lg:flex, so hidden actually hides it) -->
+            <!-- English links -->
             <div data-lang="en" class="hidden flex items-center gap-x-8">
               <a href="#om" class="text-sm font-semibold text-slate-900 hover:text-vine-700">About</a>
               <a href="#besok" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Visits</a>
               <a href="#viner" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Wines</a>
+              <a href="#nyhetsbrev" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Newsletter</a>
               <a href="#kontakt" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Contact</a>
             </div>
 
@@ -198,6 +200,7 @@
                       <a href="#om" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Om</a>
                       <a href="#besok" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Besök</a>
                       <a href="#viner" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Våra viner</a>
+                      <a href="#nyhetsbrev" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Nyhetsbrev</a>
                       <a href="#kontakt" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Kontakt</a>
                     </div>
 
@@ -206,6 +209,7 @@
                       <a href="#om" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">About</a>
                       <a href="#besok" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Visits</a>
                       <a href="#viner" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Wines</a>
+                      <a href="#nyhetsbrev" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Newsletter</a>
                       <a href="#kontakt" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Contact</a>
                     </div>
                   </div>
@@ -218,14 +222,12 @@
     </header>
 
     <!-- =========================================================
-         SECTION: HERO (new layout based on your snippet)
+         SECTION: HERO
          ========================================================= -->
     <section id="hero" class="bg-white">
       <div class="relative">
         <div class="mx-auto max-w-7xl">
-          <!-- left column -->
           <div class="relative z-10 pt-20 lg:w-full lg:max-w-2xl">
-            <!-- angled white wedge like the snippet -->
             <svg
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
@@ -237,12 +239,9 @@
 
             <div class="relative px-6 py-20 sm:py-24 lg:px-8 lg:py-32 lg:pr-0">
               <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-                <!-- Swedish -->
                 <div data-lang="sv">
                   <div class="hidden sm:mb-10 sm:flex">
-                    <div
-                      class="relative rounded-full px-3 py-1 text-sm text-slate-600 ring-1 ring-slate-900/10 hover:ring-slate-900/20"
-                    >
+                    <div class="relative rounded-full px-3 py-1 text-sm text-slate-600 ring-1 ring-slate-900/10 hover:ring-slate-900/20">
                       Nystartad vingård • Mer information kommer snart
                       <a href="#kontakt" class="whitespace-nowrap font-semibold text-vine-700">
                         <span aria-hidden="true" class="absolute inset-0"></span>
@@ -272,12 +271,9 @@
                   </div>
                 </div>
 
-                <!-- English -->
                 <div data-lang="en" class="hidden">
                   <div class="hidden sm:mb-10 sm:flex">
-                    <div
-                      class="relative rounded-full px-3 py-1 text-sm text-slate-600 ring-1 ring-slate-900/10 hover:ring-slate-900/20"
-                    >
+                    <div class="relative rounded-full px-3 py-1 text-sm text-slate-600 ring-1 ring-slate-900/10 hover:ring-slate-900/20">
                       New vineyard • More info coming soon
                       <a href="#kontakt" class="whitespace-nowrap font-semibold text-vine-700">
                         <span aria-hidden="true" class="absolute inset-0"></span>
@@ -307,7 +303,6 @@
                   </div>
                 </div>
 
-                <!-- small note (shared) -->
                 <p class="mt-10 text-xs text-slate-500">
                   <span data-lang="sv">Stora Mörtvik, 593 96 Västervik, Sweden</span>
                   <span data-lang="en" class="hidden">Stora Mörtvik, 593 96 Västervik, Sweden</span>
@@ -317,23 +312,21 @@
           </div>
         </div>
 
-        <!-- right column image (your existing background image) -->
         <div class="bg-slate-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          src="images/plowedfield.jpeg"
-          alt="M&ouml;rtviks Ving&aring;rd"
-          class="aspect-[3/2] w-full object-cover object-top lg:aspect-auto lg:h-full"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        >
-
+          <img
+            src="images/plowedfield.jpeg"
+            alt="M&ouml;rtviks Ving&aring;rd"
+            class="aspect-[3/2] w-full object-cover object-top lg:aspect-auto lg:h-full"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         SECTION: HIGHLIGHTS (unchanged content)
+         SECTION: HIGHLIGHTS
          ========================================================= -->
     <section id="highlights" class="border-y border-slate-200 bg-vine-50">
       <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
@@ -341,45 +334,33 @@
           <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <div data-lang="sv">
               <h3 class="font-semibold">Hantverk i liten skala</h3>
-              <p class="mt-1 text-sm text-slate-600">
-                Fokus på kvalitet, lokala förutsättningar och långsamt byggande. (Placeholder.)
-              </p>
+              <p class="mt-1 text-sm text-slate-600">Fokus på kvalitet, lokala förutsättningar och långsamt byggande. (Placeholder.)</p>
             </div>
             <div data-lang="en" class="hidden">
               <h3 class="font-semibold">Craft, small scale</h3>
-              <p class="mt-1 text-sm text-slate-600">
-                Focused on quality, local conditions, and steady growth. (Placeholder.)
-              </p>
+              <p class="mt-1 text-sm text-slate-600">Focused on quality, local conditions, and steady growth. (Placeholder.)</p>
             </div>
           </div>
 
           <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <div data-lang="sv">
               <h3 class="font-semibold">Svensk terroir</h3>
-              <p class="mt-1 text-sm text-slate-600">
-                Kustnära klimat, ljusa somrar och tydlig säsong. (Placeholder.)
-              </p>
+              <p class="mt-1 text-sm text-slate-600">Kustnära klimat, ljusa somrar och tydlig säsong. (Placeholder.)</p>
             </div>
             <div data-lang="en" class="hidden">
               <h3 class="font-semibold">Swedish terroir</h3>
-              <p class="mt-1 text-sm text-slate-600">
-                Coastal climate, bright summers, and a strong sense of season. (Placeholder.)
-              </p>
+              <p class="mt-1 text-sm text-slate-600">Coastal climate, bright summers, and a strong sense of season. (Placeholder.)</p>
             </div>
           </div>
 
           <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <div data-lang="sv">
               <h3 class="font-semibold">Besök (kommer snart)</h3>
-              <p class="mt-1 text-sm text-slate-600">
-                Visningar, provningar och små event – detaljer publiceras senare. (Placeholder.)
-              </p>
+              <p class="mt-1 text-sm text-slate-600">Visningar, provningar och små event – detaljer publiceras senare. (Placeholder.)</p>
             </div>
             <div data-lang="en" class="hidden">
               <h3 class="font-semibold">Visits (coming soon)</h3>
-              <p class="mt-1 text-sm text-slate-600">
-                Tours, tastings, and small events — details will be published later. (Placeholder.)
-              </p>
+              <p class="mt-1 text-sm text-slate-600">Tours, tastings, and small events — details will be published later. (Placeholder.)</p>
             </div>
           </div>
         </div>
@@ -387,218 +368,251 @@
     </section>
 
     <!-- =========================================================
-         SECTION: ABOUT + VISITS (unchanged content; added IDs/scroll offset)
+         SECTION: ABOUT
          ========================================================= -->
-    <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <div class="grid gap-8 lg:grid-cols-3">
-        <!-- About -->
-        <div id="om" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2 scroll-mt-24 sm:scroll-mt-28">
-          <div data-lang="sv">
-            <h3 class="text-xl font-semibold tracking-tight">Om Mörtviks Vingård</h3>
-            <p class="mt-3 text-slate-700">
-              Här kommer en kort berättelse om gården, platsen och varför vi började odla vin just här.
-              Tänk 2–3 stycken med varm, personlig ton. (Placeholdertext.)
-            </p>
-            <p class="mt-3 text-slate-700">
-              Vi kommer även skriva om druvor, odlingsmetoder och hur säsongerna påverkar årgångarna. (Placeholdertext.)
-            </p>
-          </div>
-
-          <div data-lang="en" class="hidden">
-            <h3 class="text-xl font-semibold tracking-tight">About Mörtviks Vingård</h3>
-            <p class="mt-3 text-slate-700">
-              A short story about the vineyard, the place, and why we chose to grow grapes here will live on this page.
-              Aim for 2–3 warm, personal paragraphs. (Placeholder text.)
-            </p>
-            <p class="mt-3 text-slate-700">
-              We’ll also share notes on grapes, growing practices, and how the seasons shape each vintage. (Placeholder text.)
-            </p>
-          </div>
+    <section id="om" class="mx-auto max-w-6xl px-4 py-10 sm:px-6 scroll-mt-24 sm:scroll-mt-28">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div data-lang="sv">
+          <h3 class="text-xl font-semibold tracking-tight">Om Mörtviks Vingård</h3>
+          <p class="mt-3 text-slate-700">
+            Här kommer en kort berättelse om gården, platsen och varför vi började odla vin just här.
+            Tänk 2–3 stycken med varm, personlig ton. (Placeholdertext.)
+          </p>
+          <p class="mt-3 text-slate-700">
+            Vi kommer även skriva om druvor, odlingsmetoder och hur säsongerna påverkar årgångarna. (Placeholdertext.)
+          </p>
         </div>
 
-        <!-- Practical info -->
-        <div id="besok" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm scroll-mt-24 sm:scroll-mt-28">
-          <div data-lang="sv">
-            <h3 class="text-xl font-semibold tracking-tight">Besök & provningar</h3>
-            <p class="mt-3 text-sm text-slate-600">
-              Placeholder: Info om bokning, säsong (t.ex. juni–september), gruppstorlek och vad som ingår.
-            </p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700">
-              <li class="flex gap-2">
-                <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
-                Endast bokade besök (placeholder)
-              </li>
-              <li class="flex gap-2">
-                <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
-                Visning i odlingen + provning (placeholder)
-              </li>
-              <li class="flex gap-2">
-                <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
-                Praktisk info om parkering och tillgänglighet (placeholder)
-              </li>
-            </ul>
-          </div>
+        <div data-lang="en" class="hidden">
+          <h3 class="text-xl font-semibold tracking-tight">About Mörtviks Vingård</h3>
+          <p class="mt-3 text-slate-700">
+            A short story about the vineyard, the place, and why we chose to grow grapes here will live on this page.
+            Aim for 2–3 warm, personal paragraphs. (Placeholder text.)
+          </p>
+          <p class="mt-3 text-slate-700">
+            We’ll also share notes on grapes, growing practices, and how the seasons shape each vintage. (Placeholder text.)
+          </p>
+        </div>
+      </div>
+    </section>
 
-          <div data-lang="en" class="hidden">
-            <h3 class="text-xl font-semibold tracking-tight">Visits & tastings</h3>
-            <p class="mt-3 text-sm text-slate-600">
-              Placeholder: booking info, season (e.g. June–September), group size, and what’s included.
-            </p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700">
-              <li class="flex gap-2">
-                <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
-                Pre-booked visits only (placeholder)
-              </li>
-              <li class="flex gap-2">
-                <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
-                Vineyard walk + tasting (placeholder)
-              </li>
-              <li class="flex gap-2">
-                <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
-                Practical notes on parking & accessibility (placeholder)
-              </li>
-            </ul>
-          </div>
+    <!-- =========================================================
+         SECTION: VISITS
+         ========================================================= -->
+    <section id="besok" class="mx-auto max-w-6xl px-4 py-10 sm:px-6 scroll-mt-24 sm:scroll-mt-28">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div data-lang="sv">
+          <h3 class="text-xl font-semibold tracking-tight">Besök & provningar</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Placeholder: Info om bokning, säsong (t.ex. juni–september), gruppstorlek och vad som ingår.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
+              Endast bokade besök (placeholder)
+            </li>
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
+              Visning i odlingen + provning (placeholder)
+            </li>
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
+              Praktisk info om parkering och tillgänglighet (placeholder)
+            </li>
+          </ul>
         </div>
 
-        <!-- Wines -->
-        <div id="viner" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-3 scroll-mt-24 sm:scroll-mt-28">
-          <div class="grid gap-6 lg:grid-cols-3">
-            <div class="lg:col-span-1">
+        <div data-lang="en" class="hidden">
+          <h3 class="text-xl font-semibold tracking-tight">Visits & tastings</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Placeholder: booking info, season (e.g. June–September), group size, and what’s included.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
+              Pre-booked visits only (placeholder)
+            </li>
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
+              Vineyard walk + tasting (placeholder)
+            </li>
+            <li class="flex gap-2">
+              <span class="mt-1 h-2 w-2 flex-none rounded-full bg-vine-600"></span>
+              Practical notes on parking & accessibility (placeholder)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION: WINES
+         ========================================================= -->
+    <section id="viner" class="mx-auto max-w-6xl px-4 py-10 sm:px-6 scroll-mt-24 sm:scroll-mt-28">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="lg:col-span-1">
+            <div data-lang="sv">
+              <h3 class="text-xl font-semibold tracking-tight">Våra viner</h3>
+              <p class="mt-3 text-sm text-slate-600">Placeholder: En kort intro om stilen på vinerna och vad som är på gång.</p>
+            </div>
+            <div data-lang="en" class="hidden">
+              <h3 class="text-xl font-semibold tracking-tight">Our wines</h3>
+              <p class="mt-3 text-sm text-slate-600">Placeholder: A short intro about your wine style and what’s in progress.</p>
+            </div>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2 lg:col-span-2">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
               <div data-lang="sv">
-                <h3 class="text-xl font-semibold tracking-tight">Våra viner</h3>
-                <p class="mt-3 text-sm text-slate-600">
-                  Placeholder: En kort intro om stilen på vinerna och vad som är på gång.
-                </p>
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Kommer snart</p>
+                <h4 class="mt-1 font-semibold">Vitt vin (placeholder)</h4>
+                <p class="mt-2 text-sm text-slate-600">Kort beskrivning: frisk, nordlig syra, citrus/blommigt. (Placeholder.)</p>
               </div>
               <div data-lang="en" class="hidden">
-                <h3 class="text-xl font-semibold tracking-tight">Our wines</h3>
-                <p class="mt-3 text-sm text-slate-600">
-                  Placeholder: A short intro about your wine style and what’s in progress.
-                </p>
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Coming soon</p>
+                <h4 class="mt-1 font-semibold">White wine (placeholder)</h4>
+                <p class="mt-2 text-sm text-slate-600">Short note: crisp, cool-climate acidity, citrus/floral. (Placeholder.)</p>
               </div>
             </div>
 
-            <div class="grid gap-4 sm:grid-cols-2 lg:col-span-2">
-              <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <div data-lang="sv">
-                  <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Kommer snart</p>
-                  <h4 class="mt-1 font-semibold">Vitt vin (placeholder)</h4>
-                  <p class="mt-2 text-sm text-slate-600">
-                    Kort beskrivning: frisk, nordlig syra, citrus/blommigt. (Placeholder.)
-                  </p>
-                </div>
-                <div data-lang="en" class="hidden">
-                  <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Coming soon</p>
-                  <h4 class="mt-1 font-semibold">White wine (placeholder)</h4>
-                  <p class="mt-2 text-sm text-slate-600">
-                    Short note: crisp, cool-climate acidity, citrus/floral. (Placeholder.)
-                  </p>
-                </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <div data-lang="sv">
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Kommer snart</p>
+                <h4 class="mt-1 font-semibold">Mousserande (placeholder)</h4>
+                <p class="mt-2 text-sm text-slate-600">Kort beskrivning: fin mousse, gröna äpplen, mineral. (Placeholder.)</p>
               </div>
-
-              <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <div data-lang="sv">
-                  <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Kommer snart</p>
-                  <h4 class="mt-1 font-semibold">Mousserande (placeholder)</h4>
-                  <p class="mt-2 text-sm text-slate-600">
-                    Kort beskrivning: fin mousse, gröna äpplen, mineral. (Placeholder.)
-                  </p>
-                </div>
-                <div data-lang="en" class="hidden">
-                  <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Coming soon</p>
-                  <h4 class="mt-1 font-semibold">Sparkling (placeholder)</h4>
-                  <p class="mt-2 text-sm text-slate-600">
-                    Short note: fine mousse, green apple, mineral. (Placeholder.)
-                  </p>
-                </div>
+              <div data-lang="en" class="hidden">
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Coming soon</p>
+                <h4 class="mt-1 font-semibold">Sparkling (placeholder)</h4>
+                <p class="mt-2 text-sm text-slate-600">Short note: fine mousse, green apple, mineral. (Placeholder.)</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Contact / newsletter -->
-        <div id="kontakt" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-3 scroll-mt-24 sm:scroll-mt-28">
-          <div class="grid gap-6 lg:grid-cols-2 lg:items-start">
-            <div>
-              <div data-lang="sv">
-                <h3 class="text-xl font-semibold tracking-tight">Kontakt</h3>
-                <p class="mt-3 text-slate-700">
-                  Placeholder: Lägg till e-post, telefon och gärna en kort rad om att ni svarar så snart ni kan.
-                </p>
-              </div>
+<!-- =========================================================
+     SECTION: NEWSLETTER (updated design)
+     ========================================================= -->
+<section id="nyhetsbrev" class="bg-white py-16 sm:py-24 scroll-mt-24 sm:scroll-mt-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div
+      class="relative isolate overflow-hidden bg-slate-900 px-6 py-24 shadow-2xl sm:rounded-3xl sm:px-16 lg:px-24 xl:py-32"
+    >
+      <!-- Swedish -->
+      <div data-lang="sv">
+        <h2 class="mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          Få en påminnelse när vi lanserar
+        </h2>
+        <p class="mx-auto mt-6 max-w-lg text-center text-lg text-slate-300">
+          Anmäl dig för uppdateringar om skörd, provningar och när vi publicerar mer information.
+        </p>
 
-              <div data-lang="en" class="hidden">
-                <h3 class="text-xl font-semibold tracking-tight">Contact</h3>
-                <p class="mt-3 text-slate-700">
-                  Placeholder: Add email, phone, and a short note about response times.
-                </p>
-              </div>
-
-              <div class="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <p class="text-sm font-semibold text-slate-900">Adress</p>
-                <p class="mt-1 text-sm text-slate-700">
-                  Stora Mörtvik, 593 96&nbsp; Västervik, Sweden
-                </p>
-              </div>
-            </div>
-
-            <form class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <div data-lang="sv">
-                <h4 class="font-semibold">Nyhetsbrev (placeholder)</h4>
-                <p class="mt-1 text-sm text-slate-600">
-                  Få uppdateringar om skörd, provningar och släpp.
-                </p>
-              </div>
-
-              <div data-lang="en" class="hidden">
-                <h4 class="font-semibold">Newsletter (placeholder)</h4>
-                <p class="mt-1 text-sm text-slate-600">
-                  Get updates on harvest, tastings, and releases.
-                </p>
-              </div>
-
-              <div class="mt-4 grid gap-3 sm:grid-cols-2">
-                <div class="sm:col-span-1">
-                  <label for="name" class="block text-sm font-medium text-slate-700">
-                    <span data-lang="sv">Namn</span>
-                    <span data-lang="en" class="hidden">Name</span>
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    placeholder="(placeholder)"
-                    class="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-vine-600 focus:outline-none focus:ring-2 focus:ring-vine-600/20"
+        <form class="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row sm:gap-x-4">
+          <label for="email-address-sv" class="sr-only">E-postadress</label>
+          <input
+            id="email-address-sv"
+            type="email"
+            name="email"
+            required
+            placeholder="Fyll i din e-post"
+            autocomplete="email"
+            class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-white/10 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600 sm:text-sm/6"
 >
-                </div>
+          <button
+            type="submit"
+            class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            Skicka
+          </button>
+        </form>
 
-                <div class="sm:col-span-1">
-                  <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="you@example.com"
-                    class="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-vine-600 focus:outline-none focus:ring-2 focus:ring-vine-600/20"
+        <p class="mt-4 text-center text-xs text-slate-400">
+          Placeholder: Lägg in GDPR-text / integritetspolicy-länk här.
+        </p>
+      </div>
+
+      <!-- English -->
+      <div data-lang="en" class="hidden">
+        <h2 class="mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          Get notified when we’re launching
+        </h2>
+        <p class="mx-auto mt-6 max-w-lg text-center text-lg text-slate-300">
+          Sign up for updates on harvest, tastings, and when we publish more information.
+        </p>
+
+        <form class="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row sm:gap-x-4">
+          <label for="email-address-en" class="sr-only">Email address</label>
+          <input
+            id="email-address-en"
+            type="email"
+            name="email"
+            required
+            placeholder="Enter your email"
+            autocomplete="email"
+            class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-white/10 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600 sm:text-sm/6"
 >
-                </div>
+          <button
+            type="submit"
+            class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            Notify me
+          </button>
+        </form>
 
-                <div class="sm:col-span-2">
-                  <button
-                    type="button"
-                    class="inline-flex w-full items-center justify-center rounded-xl bg-vine-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-vine-600 focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2"
-                  >
-                    <span data-lang="sv">Anmäl intresse</span>
-                    <span data-lang="en" class="hidden">Register interest</span>
-                  </button>
+        <p class="mt-4 text-center text-xs text-slate-400">
+          Placeholder: Add GDPR/privacy policy text/link here.
+        </p>
+      </div>
 
-                  <p class="mt-2 text-xs text-slate-500">
-                    <span data-lang="sv">Placeholder: Lägg in GDPR-text / integritetspolicy-länk här.</span>
-                    <span data-lang="en" class="hidden">Placeholder: Add GDPR/privacy policy text/link here.</span>
-                  </p>
-                </div>
-              </div>
-            </form>
-          </div>
+      <!-- Decorative gradient (kept but softened to match your palette) -->
+      <svg viewBox="0 0 1024 1024" aria-hidden="true" class="absolute left-1/2 top-1/2 -z-10 size-[64rem] -translate-x-1/2">
+        <circle r="512" cx="512" cy="512" fill="url(#mv-newsletter-gradient)" fill-opacity="0.35" />
+        <defs>
+          <radialGradient
+            id="mv-newsletter-gradient"
+            r="1"
+            cx="0"
+            cy="0"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(512 512) rotate(90) scale(512)"
+          >
+            <stop stop-color="#1f7a4a" />
+            <stop offset="1" stop-color="#1f7a4a" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+    <!-- =========================================================
+         SECTION: CONTACT (now ONLY contact)
+         ========================================================= -->
+    <section id="kontakt" class="mx-auto max-w-6xl px-4 py-10 sm:px-6 scroll-mt-24 sm:scroll-mt-28">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div data-lang="sv">
+          <h3 class="text-xl font-semibold tracking-tight">Kontakt</h3>
+          <p class="mt-3 text-slate-700">
+            Placeholder: Lägg till e-post, telefon och gärna en kort rad om att ni svarar så snart ni kan.
+          </p>
+        </div>
+
+        <div data-lang="en" class="hidden">
+          <h3 class="text-xl font-semibold tracking-tight">Contact</h3>
+          <p class="mt-3 text-slate-700">
+            Placeholder: Add email, phone, and a short note about response times.
+          </p>
+        </div>
+
+        <div class="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <p class="text-sm font-semibold text-slate-900">Adress</p>
+          <p class="mt-1 text-sm text-slate-700">
+            Stora Mörtvik, 593 96&nbsp; Västervik, Sweden
+          </p>
         </div>
       </div>
     </section>
@@ -648,11 +662,6 @@
         langBlocks.forEach((el) => {
           const isMatch = el.getAttribute("data-lang") === lang;
           el.classList.toggle("hidden", !isMatch);
-          // for mobile/desktop flex containers that start as "hidden", restore their display if needed
-          if (isMatch) {
-            // If element was intended to be flex on desktop/mobile menu, it already has those classes.
-            // We only remove "hidden"; layout class stays.
-          }
         });
 
         const svActive = lang === "sv";
