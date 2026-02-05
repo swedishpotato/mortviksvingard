@@ -34,7 +34,16 @@
 
     <!-- Tailwind Plus Elements (for command/show-modal dialog behavior) -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-  </head>
+    <!-- Leaflet (OpenStreetMap) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      defer
+    ></script>
+
 
   <body class="min-h-screen bg-vine-50 text-slate-900">
     <!-- =========================================================
@@ -621,7 +630,9 @@
      SECTION: CONTACT (updated template; bilingual)
      ========================================================= -->
 <section id="kontakt" class="relative isolate bg-white scroll-mt-24 sm:scroll-mt-28">
-  <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+<div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 items-stretch">
+
+
     <!-- Left: info -->
     <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-40">
       <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
@@ -729,114 +740,17 @@
       </div>
     </div>
 
-    <!-- Right: form -->
-    <form action="#" method="POST" class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-40">
-      <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-        <!-- Swedish -->
-        <div data-lang="sv">
-          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-            <div>
-              <label for="first-name-sv" class="block text-sm/6 font-semibold text-slate-900">Förnamn</label>
-              <div class="mt-2.5">
-                <input id="first-name-sv" type="text" name="first-name" autocomplete="given-name"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
-              </div>
-            </div>
+<!-- Right column: MAP (fills full column area, square edges) -->
+<div class="relative min-h-[520px] lg:min-h-0">
+  <div
+    id="grayscale-leaflet"
+    class="absolute inset-0 w-full h-full rounded-none overflow-hidden ring-1 ring-slate-900/10"
+  ></div>
+</div>
 
-            <div>
-              <label for="last-name-sv" class="block text-sm/6 font-semibold text-slate-900">Efternamn</label>
-              <div class="mt-2.5">
-                <input id="last-name-sv" type="text" name="last-name" autocomplete="family-name"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
-              </div>
-            </div>
 
-            <div class="sm:col-span-2">
-              <label for="email-contact-sv" class="block text-sm/6 font-semibold text-slate-900">E-post</label>
-              <div class="mt-2.5">
-                <input id="email-contact-sv" type="email" name="email" autocomplete="email"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
-              </div>
-            </div>
 
-            <div class="sm:col-span-2">
-              <label for="phone-number-sv" class="block text-sm/6 font-semibold text-slate-900">Telefon</label>
-              <div class="mt-2.5">
-                <input id="phone-number-sv" type="tel" name="phone-number" autocomplete="tel"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
-              </div>
-            </div>
 
-            <div class="sm:col-span-2">
-              <label for="message-sv" class="block text-sm/6 font-semibold text-slate-900">Meddelande</label>
-              <div class="mt-2.5">
-                <textarea id="message-sv" name="message" rows="4"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 flex justify-end">
-            <button type="submit"
-              class="rounded-md bg-vine-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-vine-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vine-600">
-              Skicka meddelande
-            </button>
-          </div>
-        </div>
-
-        <!-- English -->
-        <div data-lang="en" class="hidden">
-          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-            <div>
-              <label for="first-name-en" class="block text-sm/6 font-semibold text-slate-900">First name</label>
-              <div class="mt-2.5">
-                <input id="first-name-en" type="text" name="first-name" autocomplete="given-name"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
-              </div>
-            </div>
-
-            <div>
-              <label for="last-name-en" class="block text-sm/6 font-semibold text-slate-900">Last name</label>
-              <div class="mt-2.5">
-                <input id="last-name-en" type="text" name="last-name" autocomplete="family-name"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
-              </div>
-            </div>
-
-            <div class="sm:col-span-2">
-              <label for="email-contact-en" class="block text-sm/6 font-semibold text-slate-900">Email</label>
-              <div class="mt-2.5">
-                <input id="email-contact-en" type="email" name="email" autocomplete="email"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
-              </div>
-            </div>
-
-            <div class="sm:col-span-2">
-              <label for="phone-number-en" class="block text-sm/6 font-semibold text-slate-900">Phone number</label>
-              <div class="mt-2.5">
-                <input id="phone-number-en" type="tel" name="phone-number" autocomplete="tel"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
-              </div>
-            </div>
-
-            <div class="sm:col-span-2">
-              <label for="message-en" class="block text-sm/6 font-semibold text-slate-900">Message</label>
-              <div class="mt-2.5">
-                <textarea id="message-en" name="message" rows="4"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 flex justify-end">
-            <button type="submit"
-              class="rounded-md bg-vine-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-vine-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vine-600">
-              Send message
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
   </div>
 </section>
 
@@ -968,5 +882,44 @@
       document.getElementById("year").textContent = y;
       document.getElementById("year2").textContent = y;
     </script>
+
+    <script>
+      // Leaflet map init (paste here)
+      window.addEventListener("load", () => {
+        if (!window.L) return;
+
+        const el = document.getElementById("grayscale-leaflet");
+        if (!el) return;
+        if (el.dataset.initialized === "true") return;
+        el.dataset.initialized = "true";
+
+        const center = [57.762548, 16.539248];
+
+
+        const map = L.map("grayscale-leaflet", {
+          center,
+          zoom: 12,
+          zoomControl: true,
+          scrollWheelZoom: false,
+        });
+
+        L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+          subdomains: "abcd",
+          maxZoom: 19,
+          attribution:
+            '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/attributions">CARTO</a>',
+        }).addTo(map);
+
+        L.marker(center).addTo(map);
+
+const fix = () => map.invalidateSize();
+requestAnimationFrame(fix);
+setTimeout(fix, 250);
+window.addEventListener("resize", fix);
+
+      });
+    </script>
+
+
   </body>
 </html>
