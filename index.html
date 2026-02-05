@@ -445,53 +445,81 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         SECTION: WINES
-         ========================================================= -->
-    <section id="viner" class="mx-auto max-w-6xl px-4 py-10 sm:px-6 scroll-mt-24 sm:scroll-mt-28">
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div class="grid gap-6 lg:grid-cols-3">
-          <div class="lg:col-span-1">
-            <div data-lang="sv">
-              <h3 class="text-xl font-semibold tracking-tight">Våra viner</h3>
-              <p class="mt-3 text-sm text-slate-600">Placeholder: En kort intro om stilen på vinerna och vad som är på gång.</p>
-            </div>
-            <div data-lang="en" class="hidden">
-              <h3 class="text-xl font-semibold tracking-tight">Our wines</h3>
-              <p class="mt-3 text-sm text-slate-600">Placeholder: A short intro about your wine style and what’s in progress.</p>
-            </div>
-          </div>
+<!-- =========================================================
+     SECTION: WINES (replaced with your new template; bilingual)
+     ========================================================= -->
+<section id="viner" class="bg-slate-50 scroll-mt-24 sm:scroll-mt-28">
+  <div class="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
+    <section aria-labelledby="details-heading">
+      <div class="flex flex-col items-center text-center">
+        <!-- Swedish -->
+        <div data-lang="sv">
+          <h2 id="details-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Våra viner
+          </h2>
+          <p class="mt-3 max-w-3xl text-lg text-slate-600">
+            Placeholder: Kort intro om stil, druvor och vad som är på gång. Här kan vi skriva mer när första vinerna närmar sig.
+          </p>
+        </div>
 
-          <div class="grid gap-4 sm:grid-cols-2 lg:col-span-2">
-            <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <div data-lang="sv">
-                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Kommer snart</p>
-                <h4 class="mt-1 font-semibold">Vitt vin (placeholder)</h4>
-                <p class="mt-2 text-sm text-slate-600">Kort beskrivning: frisk, nordlig syra, citrus/blommigt. (Placeholder.)</p>
-              </div>
-              <div data-lang="en" class="hidden">
-                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Coming soon</p>
-                <h4 class="mt-1 font-semibold">White wine (placeholder)</h4>
-                <p class="mt-2 text-sm text-slate-600">Short note: crisp, cool-climate acidity, citrus/floral. (Placeholder.)</p>
-              </div>
-            </div>
+        <!-- English -->
+        <div data-lang="en" class="hidden">
+          <h2 id="details-heading" class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Our wines
+          </h2>
+          <p class="mt-3 max-w-3xl text-lg text-slate-600">
+            Placeholder: A short intro about style, grapes, and what’s in progress. We’ll expand this as the first wines get closer.
+          </p>
+        </div>
+      </div>
 
-            <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <div data-lang="sv">
-                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Kommer snart</p>
-                <h4 class="mt-1 font-semibold">Mousserande (placeholder)</h4>
-                <p class="mt-2 text-sm text-slate-600">Kort beskrivning: fin mousse, gröna äpplen, mineral. (Placeholder.)</p>
-              </div>
-              <div data-lang="en" class="hidden">
-                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Coming soon</p>
-                <h4 class="mt-1 font-semibold">Sparkling (placeholder)</h4>
-                <p class="mt-2 text-sm text-slate-600">Short note: fine mousse, green apple, mineral. (Placeholder.)</p>
-              </div>
-            </div>
-          </div>
+      <div class="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
+        <!-- Item 1 -->
+        <div>
+          <img
+            src="images/whitewine.jpg"
+            alt="M&ouml;rtviks Ving&aring;rd"
+            class="aspect-[3/2] w-full rounded-lg object-cover object-top"
+            loading="lazy"
+            decoding="async"
+>
+
+          <!-- Swedish -->
+          <p data-lang="sv" class="mt-8 text-base text-slate-500">
+            Placeholder: Beskrivning av ett vitt vin eller en stil – frisk syra, citrus/blommigt, och en känsla av svensk kust.
+          </p>
+
+          <!-- English -->
+          <p data-lang="en" class="hidden mt-8 text-base text-slate-500">
+            Placeholder: A description of a white wine or style — crisp acidity, citrus/floral notes, and a hint of the Swedish coast.
+          </p>
+        </div>
+
+        <!-- Item 2 -->
+        <div>
+          <img
+            src="images/bubbles.jpg"
+            alt="M&ouml;rtviks Ving&aring;rd"
+            class="aspect-[3/2] w-full rounded-lg object-cover object-top"
+            loading="lazy"
+            decoding="async"
+>
+
+          <!-- Swedish -->
+          <p data-lang="sv" class="mt-8 text-base text-slate-500">
+            Placeholder: Beskrivning av mousserande eller en annan kommande cuvée – fin mousse, gröna äpplen, mineral.
+          </p>
+
+          <!-- English -->
+          <p data-lang="en" class="hidden mt-8 text-base text-slate-500">
+            Placeholder: A sparkling wine or another upcoming cuvée — fine mousse, green apple, and mineral notes.
+          </p>
         </div>
       </div>
     </section>
+  </div>
+</section>
+
 
 <!-- =========================================================
      SECTION: NEWSLETTER (updated design)
@@ -589,33 +617,229 @@
 </section>
 
 
-    <!-- =========================================================
-         SECTION: CONTACT (now ONLY contact)
-         ========================================================= -->
-    <section id="kontakt" class="mx-auto max-w-6xl px-4 py-10 sm:px-6 scroll-mt-24 sm:scroll-mt-28">
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+<!-- =========================================================
+     SECTION: CONTACT (updated template; bilingual)
+     ========================================================= -->
+<section id="kontakt" class="relative isolate bg-white scroll-mt-24 sm:scroll-mt-28">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+    <!-- Left: info -->
+    <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-40">
+      <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+        <div class="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-slate-100 ring-1 ring-slate-900/10 lg:w-1/2">
+          <svg
+            aria-hidden="true"
+            class="absolute inset-0 size-full stroke-slate-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+          >
+            <defs>
+              <pattern id="mv-contact-grid" width="200" height="200" x="100%" y="-1" patternUnits="userSpaceOnUse">
+                <path d="M130 200V.5M.5 .5H200" fill="none" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" stroke-width="0" class="fill-white" />
+            <svg x="100%" y="-1" class="overflow-visible fill-slate-50">
+              <path d="M-470.5 0h201v201h-201Z" stroke-width="0" />
+            </svg>
+            <rect width="100%" height="100%" fill="url(#mv-contact-grid)" stroke-width="0" />
+          </svg>
+        </div>
+
+        <!-- Swedish -->
         <div data-lang="sv">
-          <h3 class="text-xl font-semibold tracking-tight">Kontakt</h3>
-          <p class="mt-3 text-slate-700">
-            Placeholder: Lägg till e-post, telefon och gärna en kort rad om att ni svarar så snart ni kan.
+          <h2 class="text-pretty text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+            Kontakta oss
+          </h2>
+          <p class="mt-6 text-lg/8 text-slate-600">
+            Placeholder: Lägg till en kort rad om hur ni helst vill bli kontaktade och när ni brukar svara.
           </p>
+
+          <dl class="mt-10 space-y-4 text-base/7 text-slate-700">
+            <div class="flex gap-x-4">
+              <dt class="flex-none">
+                <span class="sr-only">Adress</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="h-7 w-6 text-slate-400">
+                  <path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </dt>
+              <dd>Stora Mörtvik<br>593 96 Västervik, Sweden</dd>
+            </div>
+
+            <div class="flex gap-x-4">
+              <dt class="flex-none">
+                <span class="sr-only">Telefon</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="h-7 w-6 text-slate-400">
+                  <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </dt>
+              <dd><a href="tel:+46XXXXXXXXX" class="hover:text-slate-900">+46 (0)XX XXX XX XX (placeholder)</a></dd>
+            </div>
+
+            <div class="flex gap-x-4">
+              <dt class="flex-none">
+                <span class="sr-only">E-post</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="h-7 w-6 text-slate-400">
+                  <path d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </dt>
+              <dd><a href="mailto:hello@example.com" class="hover:text-slate-900">hello@example.com (placeholder)</a></dd>
+            </div>
+          </dl>
         </div>
 
+        <!-- English -->
         <div data-lang="en" class="hidden">
-          <h3 class="text-xl font-semibold tracking-tight">Contact</h3>
-          <p class="mt-3 text-slate-700">
-            Placeholder: Add email, phone, and a short note about response times.
+          <h2 class="text-pretty text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+            Get in touch
+          </h2>
+          <p class="mt-6 text-lg/8 text-slate-600">
+            Placeholder: Add a short note on preferred contact method and typical response times.
           </p>
-        </div>
 
-        <div class="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-5">
-          <p class="text-sm font-semibold text-slate-900">Adress</p>
-          <p class="mt-1 text-sm text-slate-700">
-            Stora Mörtvik, 593 96&nbsp; Västervik, Sweden
-          </p>
+          <dl class="mt-10 space-y-4 text-base/7 text-slate-700">
+            <div class="flex gap-x-4">
+              <dt class="flex-none">
+                <span class="sr-only">Address</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="h-7 w-6 text-slate-400">
+                  <path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </dt>
+              <dd>Stora Mörtvik<br>593 96 Västervik, Sweden</dd>
+            </div>
+
+            <div class="flex gap-x-4">
+              <dt class="flex-none">
+                <span class="sr-only">Telephone</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="h-7 w-6 text-slate-400">
+                  <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </dt>
+              <dd><a href="tel:+46XXXXXXXXX" class="hover:text-slate-900">+46 (0)XX XXX XX XX (placeholder)</a></dd>
+            </div>
+
+            <div class="flex gap-x-4">
+              <dt class="flex-none">
+                <span class="sr-only">Email</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="h-7 w-6 text-slate-400">
+                  <path d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </dt>
+              <dd><a href="mailto:hello@example.com" class="hover:text-slate-900">hello@example.com (placeholder)</a></dd>
+            </div>
+          </dl>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Right: form -->
+    <form action="#" method="POST" class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-40">
+      <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+        <!-- Swedish -->
+        <div data-lang="sv">
+          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div>
+              <label for="first-name-sv" class="block text-sm/6 font-semibold text-slate-900">Förnamn</label>
+              <div class="mt-2.5">
+                <input id="first-name-sv" type="text" name="first-name" autocomplete="given-name"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
+              </div>
+            </div>
+
+            <div>
+              <label for="last-name-sv" class="block text-sm/6 font-semibold text-slate-900">Efternamn</label>
+              <div class="mt-2.5">
+                <input id="last-name-sv" type="text" name="last-name" autocomplete="family-name"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="email-contact-sv" class="block text-sm/6 font-semibold text-slate-900">E-post</label>
+              <div class="mt-2.5">
+                <input id="email-contact-sv" type="email" name="email" autocomplete="email"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="phone-number-sv" class="block text-sm/6 font-semibold text-slate-900">Telefon</label>
+              <div class="mt-2.5">
+                <input id="phone-number-sv" type="tel" name="phone-number" autocomplete="tel"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="message-sv" class="block text-sm/6 font-semibold text-slate-900">Meddelande</label>
+              <div class="mt-2.5">
+                <textarea id="message-sv" name="message" rows="4"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex justify-end">
+            <button type="submit"
+              class="rounded-md bg-vine-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-vine-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vine-600">
+              Skicka meddelande
+            </button>
+          </div>
+        </div>
+
+        <!-- English -->
+        <div data-lang="en" class="hidden">
+          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div>
+              <label for="first-name-en" class="block text-sm/6 font-semibold text-slate-900">First name</label>
+              <div class="mt-2.5">
+                <input id="first-name-en" type="text" name="first-name" autocomplete="given-name"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
+              </div>
+            </div>
+
+            <div>
+              <label for="last-name-en" class="block text-sm/6 font-semibold text-slate-900">Last name</label>
+              <div class="mt-2.5">
+                <input id="last-name-en" type="text" name="last-name" autocomplete="family-name"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="email-contact-en" class="block text-sm/6 font-semibold text-slate-900">Email</label>
+              <div class="mt-2.5">
+                <input id="email-contact-en" type="email" name="email" autocomplete="email"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="phone-number-en" class="block text-sm/6 font-semibold text-slate-900">Phone number</label>
+              <div class="mt-2.5">
+                <input id="phone-number-en" type="tel" name="phone-number" autocomplete="tel"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600">
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="message-en" class="block text-sm/6 font-semibold text-slate-900">Message</label>
+              <div class="mt-2.5">
+                <textarea id="message-en" name="message" rows="4"
+                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-slate-900 outline outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-vine-600"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex justify-end">
+            <button type="submit"
+              class="rounded-md bg-vine-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-vine-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vine-600">
+              Send message
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
 
     <!-- =========================================================
          SECTION: FOOTER
