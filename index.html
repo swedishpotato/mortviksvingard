@@ -629,30 +629,15 @@
 <!-- =========================================================
      SECTION: CONTACT (updated template; bilingual)
      ========================================================= -->
-<section id="kontakt" class="relative isolate bg-white scroll-mt-24 sm:scroll-mt-28">
+<section id="kontakt" class="relative isolate bg-slate-100 scroll-mt-24 sm:scroll-mt-28">
+
 <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 items-stretch">
 
 
     <!-- Left: info -->
     <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-40">
       <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-        <div class="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-slate-100 ring-1 ring-slate-900/10 lg:w-1/2">
-          <svg
-            aria-hidden="true"
-            class="absolute inset-0 size-full stroke-slate-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-          >
-            <defs>
-              <pattern id="mv-contact-grid" width="200" height="200" x="100%" y="-1" patternUnits="userSpaceOnUse">
-                <path d="M130 200V.5M.5 .5H200" fill="none" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" stroke-width="0" class="fill-white" />
-            <svg x="100%" y="-1" class="overflow-visible fill-slate-50">
-              <path d="M-470.5 0h201v201h-201Z" stroke-width="0" />
-            </svg>
-            <rect width="100%" height="100%" fill="url(#mv-contact-grid)" stroke-width="0" />
-          </svg>
-        </div>
+
 
         <!-- Swedish -->
         <div data-lang="sv">
@@ -740,13 +725,16 @@
       </div>
     </div>
 
-<!-- Right column: MAP (fills full column area, square edges) -->
-<div class="relative min-h-[520px] lg:min-h-0">
-  <div
-    id="grayscale-leaflet"
-    class="absolute inset-0 w-full h-full rounded-none overflow-hidden ring-1 ring-slate-900/10"
-  ></div>
+<!-- Right column: MAP (same sizing/padding as the left column) -->
+<div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:px-8 lg:py-40">
+  <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+    <div
+      id="grayscale-leaflet"
+      class="w-full h-[400px] sm:h-[520px] rounded-none overflow-hidden ring-1 ring-slate-900/10"
+    ></div>
+  </div>
 </div>
+
 
 
 
