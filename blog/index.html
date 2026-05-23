@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="sv" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blogg – Mörtviks Vingård</title>
+    <meta
+      name="description"
+      id="meta-desc"
+      content="Mörtviks Vingård – berättelser och nyheter från vingården i Västervik."
+    >
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config (keep original vine palette) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              vine: {
+                50: "#f4fbf6",
+                100: "#e6f6eb",
+                600: "#1f7a4a",
+                700: "#185f3a",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Tailwind Plus Elements -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+  </head>
+  <body class="min-h-screen bg-vine-50 text-slate-900">
+
+    <!-- =========================================================
+         HEADER (fixed)
+         ========================================================= -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur">
+      <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6">
+        <nav aria-label="Global" class="flex items-center justify-between">
+          <!-- Brand -->
+          <a href="../" class="flex items-center gap-3">
+            <div class="grid h-10 w-10 place-items-center rounded-xl bg-vine-100 text-vine-700" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3c2.5 0 4.5 1.8 4.5 4.2 0 1-.4 1.9-1 2.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M13 3c0 3-2.5 4.5-5.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="8" cy="12" r="2.2" fill="currentColor" opacity="0.9"/>
+                <circle cx="14" cy="12" r="2.2" fill="currentColor" opacity="0.9"/>
+                <circle cx="11" cy="16.5" r="2.2" fill="currentColor" opacity="0.9"/>
+                <circle cx="17" cy="16.5" r="2.2" fill="currentColor" opacity="0.9"/>
+              </svg>
+            </div>
+            <div class="leading-tight">
+              <p class="text-xs text-slate-600">Vingård i Västervik</p>
+              <p class="text-sm font-semibold tracking-tight">Mörtviks Vingård</p>
+            </div>
+          </a>
+
+          <!-- Desktop nav -->
+          <div class="hidden lg:flex lg:items-center lg:gap-x-10">
+            <div data-lang="sv" class="flex items-center gap-x-8">
+              <a href="../#om" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Om</a>
+              <a href="../#besok" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Besök</a>
+              <a href="../#viner" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Våra viner</a>
+              <a href="index.html" class="text-sm font-semibold text-vine-700 border-b-2 border-vine-600 pb-0.5">Blogg</a>
+              <a href="../#nyhetsbrev" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Nyhetsbrev</a>
+              <a href="../#kontakt" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Kontakt</a>
+            </div>
+            <div data-lang="en" class="hidden flex items-center gap-x-8">
+              <a href="../#om" class="text-sm font-semibold text-slate-900 hover:text-vine-700">About</a>
+              <a href="../#besok" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Visits</a>
+              <a href="../#viner" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Wines</a>
+              <a href="index.html" class="text-sm font-semibold text-vine-700 border-b-2 border-vine-600 pb-0.5">Blog</a>
+              <a href="../#nyhetsbrev" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Newsletter</a>
+              <a href="../#kontakt" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Contact</a>
+            </div>
+
+            <!-- Language switch (desktop) -->
+            <div class="ml-2 flex items-center gap-2 border-l border-slate-200 pl-6">
+              <button
+                id="btn-sv"
+                type="button"
+                class="rounded-full border border-slate-300 bg-slate-900 px-3 py-1.5 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2"
+                aria-pressed="true"
+              >Svenska</button>
+              <button
+                id="btn-en"
+                type="button"
+                class="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-900 shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2"
+                aria-pressed="false"
+              >English</button>
+            </div>
+          </div>
+
+          <!-- Mobile controls -->
+          <div class="flex items-center gap-2 lg:hidden">
+            <button id="btn-sv-mobile" type="button" class="rounded-full border border-slate-300 bg-slate-900 px-3 py-1.5 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2" aria-pressed="true">SV</button>
+            <button id="btn-en-mobile" type="button" class="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-900 shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2" aria-pressed="false">EN</button>
+            <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-slate-900">
+              <span class="sr-only">Open main menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
+                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Mobile menu -->
+      <el-dialog>
+        <dialog id="mobile-menu" class="m-0 p-0 backdrop:bg-black/30 lg:hidden">
+          <div tabindex="0" class="fixed inset-0 focus:outline-none">
+            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10">
+              <div class="flex items-center justify-between">
+                <a href="../" class="-m-1.5 p-1.5 flex items-center gap-3">
+                  <span class="sr-only">Mörtviks Vingård</span>
+                  <div class="grid h-10 w-10 place-items-center rounded-xl bg-vine-100 text-vine-700" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 3c2.5 0 4.5 1.8 4.5 4.2 0 1-.4 1.9-1 2.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M13 3c0 3-2.5 4.5-5.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <circle cx="8" cy="12" r="2.2" fill="currentColor" opacity="0.9"/>
+                      <circle cx="14" cy="12" r="2.2" fill="currentColor" opacity="0.9"/>
+                      <circle cx="11" cy="16.5" r="2.2" fill="currentColor" opacity="0.9"/>
+                      <circle cx="17" cy="16.5" r="2.2" fill="currentColor" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <div class="leading-tight">
+                    <p class="text-xs text-slate-600">Vingård i Västervik</p>
+                    <p class="text-sm font-semibold tracking-tight">Mörtviks Vingård</p>
+                  </div>
+                </a>
+                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-slate-900">
+                  <span class="sr-only">Close menu</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
+                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-slate-200">
+                  <div class="space-y-2 py-6">
+                    <div data-lang="sv" class="space-y-2">
+                      <a href="../#om" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Om</a>
+                      <a href="../#besok" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Besök</a>
+                      <a href="../#viner" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Våra viner</a>
+                      <a href="index.html" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-vine-700 bg-vine-50">Blogg</a>
+                      <a href="../#nyhetsbrev" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Nyhetsbrev</a>
+                      <a href="../#kontakt" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Kontakt</a>
+                    </div>
+                    <div data-lang="en" class="hidden space-y-2">
+                      <a href="../#om" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">About</a>
+                      <a href="../#besok" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Visits</a>
+                      <a href="../#viner" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Wines</a>
+                      <a href="index.html" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-vine-700 bg-vine-50">Blog</a>
+                      <a href="../#nyhetsbrev" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Newsletter</a>
+                      <a href="../#kontakt" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </el-dialog-panel>
+          </div>
+        </dialog>
+      </el-dialog>
+    </header>
+
+
+    <!-- =========================================================
+         PAGE HERO
+         ========================================================= -->
+    <div class="pt-24 pb-10 bg-white border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Breadcrumb" class="mb-4 flex items-center gap-2 text-sm text-slate-500">
+          <a href="../" class="hover:text-slate-700">Mörtviks Vingård</a>
+          <span aria-hidden="true">›</span>
+          <span data-lang="sv" class="text-slate-900 font-medium">Blogg</span>
+          <span data-lang="en" class="hidden text-slate-900 font-medium">Blog</span>
+        </nav>
+
+        <div data-lang="sv">
+          <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Bloggen</h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-2xl">
+            Berättelser, nyheter och tankar från vår resa mot det första riktiga skördeåret.
+          </p>
+        </div>
+        <div data-lang="en" class="hidden">
+          <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">The Blog</h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-2xl">
+            Stories, news, and thoughts from our journey towards the first proper harvest year.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =========================================================
+         BLOG POST LIST
+         ========================================================= -->
+    <main class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Post 1 -->
+        <article class="group rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+          <a href="post-1.html" class="block">
+            <div class="aspect-[3/2] overflow-hidden bg-slate-100">
+              <img
+                src="../images/plowedfield.jpeg"
+                alt="Plöjd åker vid Mörtviks Vingård"
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </a>
+          <div class="p-6">
+            <div data-lang="sv">
+              <p class="text-xs font-medium text-vine-700">20 december 2025</p>
+              <h2 class="mt-2 text-xl font-semibold text-slate-900 group-hover:text-vine-700 transition-colors">
+                <a href="post-1.html">Det börjar med en idé – och ett fält</a>
+              </h2>
+              <p class="mt-2 text-sm text-slate-600 line-clamp-3">
+                Allt startade med en bit mark, ett frö av en idé och en önskan att skapa något eget.
+                Här berättar vi om hur vingårdsdrömmen tog sin form längs kusten utanför Västervik.
+              </p>
+              <a href="post-1.html" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-vine-700 hover:text-vine-600">
+                Läs mer <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div data-lang="en" class="hidden">
+              <p class="text-xs font-medium text-vine-700">20 December 2025</p>
+              <h2 class="mt-2 text-xl font-semibold text-slate-900 group-hover:text-vine-700 transition-colors">
+                <a href="post-1.html">It starts with an idea – and a field</a>
+              </h2>
+              <p class="mt-2 text-sm text-slate-600 line-clamp-3">
+                It all began with a piece of land, a seed of an idea, and a desire to create something
+                of our own. Here we tell the story of how the vineyard dream took shape along the coast
+                outside Västervik.
+              </p>
+              <a href="post-1.html" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-vine-700 hover:text-vine-600">
+                Read more <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- "More posts coming" placeholder -->
+        <div class="rounded-2xl border border-dashed border-slate-300 bg-white/60 p-8 flex flex-col items-center justify-center text-center min-h-[300px]">
+          <div class="grid h-12 w-12 place-items-center rounded-full bg-vine-100 text-vine-700 mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div data-lang="sv">
+            <p class="text-sm font-semibold text-slate-700">Fler inlägg på väg</p>
+            <p class="mt-2 text-xs text-slate-500 max-w-xs">
+              Vi berättar mer om skörd, druvor och årstider allt eftersom vingården växer.
+              Prenumerera på nyhetsbrevet för att inte missa något.
+            </p>
+            <a href="../#nyhetsbrev" class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-vine-700 hover:text-vine-600">
+              Prenumerera <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div data-lang="en" class="hidden">
+            <p class="text-sm font-semibold text-slate-700">More posts coming</p>
+            <p class="mt-2 text-xs text-slate-500 max-w-xs">
+              We'll share more about harvests, grapes, and seasons as the vineyard grows.
+              Subscribe to our newsletter so you don't miss anything.
+            </p>
+            <a href="../#nyhetsbrev" class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-vine-700 hover:text-vine-600">
+              Subscribe <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+
+    <!-- ========================================================
+         FOOTER
+         ========================================================= -->
+    <footer class="border-t border-slate-200 bg-white mt-8">
+      <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-sm text-slate-600">
+            <a href="../" class="font-medium text-slate-900 hover:text-vine-700">Mörtviks Vingård</a>
+            <span class="mx-2 text-slate-300">•</span>
+            Stora Mörtvik, 593 96&nbsp;Västervik, Sweden
+          </p>
+          <p class="text-sm text-slate-500">
+            <span data-lang="sv">© <span id="year"></span> – Alla rättigheter förbehållna.</span>
+            <span data-lang="en" class="hidden">© <span id="year2"></span> – All rights reserved.</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script>
+      const btnSv = document.getElementById("btn-sv");
+      const btnEn = document.getElementById("btn-en");
+      const btnSvMobile = document.getElementById("btn-sv-mobile");
+      const btnEnMobile = document.getElementById("btn-en-mobile");
+      const langBlocks = Array.from(document.querySelectorAll("[data-lang]"));
+
+      function setLang(lang) {
+        const meta = document.getElementById("meta-desc");
+        if (meta) {
+          meta.setAttribute(
+            "content",
+            lang === "sv"
+              ? "Mörtviks Vingård – berättelser och nyheter från vingården i Västervik."
+              : "Mörtviks Vingård – stories and news from the vineyard in Västervik."
+          );
+        }
+        langBlocks.forEach((el) => {
+          el.classList.toggle("hidden", el.getAttribute("data-lang") !== lang);
+        });
+        const svActive = lang === "sv";
+        btnSv?.setAttribute("aria-pressed", svActive ? "true" : "false");
+        btnEn?.setAttribute("aria-pressed", svActive ? "false" : "true");
+        if (btnSv) btnSv.className = "rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2 " + (svActive ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-slate-50");
+        if (btnEn) btnEn.className = "rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2 " + (!svActive ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-slate-50");
+        btnSvMobile?.setAttribute("aria-pressed", svActive ? "true" : "false");
+        btnEnMobile?.setAttribute("aria-pressed", svActive ? "false" : "true");
+        if (btnSvMobile) btnSvMobile.className = "rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2 " + (svActive ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-slate-50");
+        if (btnEnMobile) btnEnMobile.className = "rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2 " + (!svActive ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-slate-50");
+        document.documentElement.lang = lang;
+        try { localStorage.setItem("mv_lang", lang); } catch (_) {}
+      }
+
+      btnSv?.addEventListener("click", () => setLang("sv"));
+      btnEn?.addEventListener("click", () => setLang("en"));
+      btnSvMobile?.addEventListener("click", () => setLang("sv"));
+      btnEnMobile?.addEventListener("click", () => setLang("en"));
+
+      const saved = (() => { try { return localStorage.getItem("mv_lang"); } catch (_) { return null; } })();
+      setLang(saved === "en" ? "en" : "sv");
+
+      const y = new Date().getFullYear();
+      const yearEl = document.getElementById("year");
+      const year2El = document.getElementById("year2");
+      if (yearEl) yearEl.textContent = y;
+      if (year2El) year2El.textContent = y;
+    </script>
+
+  </body>
+</html>
