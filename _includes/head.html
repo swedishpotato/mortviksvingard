@@ -1,0 +1,30 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: "Mörtviks Vingård" }}</title>
+  <meta name="description" id="meta-desc" content="{{ page.description_sv | default: site.description }}">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vine: {
+              50: "#f4fbf6",
+              100: "#e6f6eb",
+              600: "#1f7a4a",
+              700: "#185f3a",
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+  {% if page.leaflet %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" >
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  {% endif %}
+</head>

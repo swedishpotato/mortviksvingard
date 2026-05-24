@@ -1,0 +1,139 @@
+{% if page.layout == "post" or page.is_blog_page %}
+  {% assign brand_href = "../index.html" %}
+  {% assign nav_prefix = "../" %}
+  {% assign blog_link = "index.html" %}
+  {% assign is_blog_active = true %}
+{% else %}
+  {% assign brand_href = "#hero" %}
+  {% assign nav_prefix = "" %}
+  {% assign blog_link = "blog/index.html" %}
+  {% assign is_blog_active = false %}
+{% endif %}
+<header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur">
+  <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6">
+    <nav aria-label="Global" class="flex items-center justify-between">
+      <!-- Brand -->
+      <a href="{{ brand_href }}" class="flex items-center gap-3">
+        <div class="grid h-10 w-10 place-items-center rounded-xl bg-vine-100 text-vine-700" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3c2.5 0 4.5 1.8 4.5 4.2 0 1-.4 1.9-1 2.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M13 3c0 3-2.5 4.5-5.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="8" cy="12" r="2.2" fill="currentColor" opacity="0.9"/>
+            <circle cx="14" cy="12" r="2.2" fill="currentColor" opacity="0.9"/>
+            <circle cx="11" cy="16.5" r="2.2" fill="currentColor" opacity="0.9"/>
+            <circle cx="17" cy="16.5" r="2.2" fill="currentColor" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <p class="text-xs text-slate-600">Vingård i Västervik</p>
+          <p class="text-sm font-semibold tracking-tight">Mörtviks Vingård</p>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex lg:items-center lg:gap-x-10">
+        <div data-lang="sv" class="flex items-center gap-x-8">
+          <a href="{{ nav_prefix }}#om" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Om</a>
+          <a href="{{ nav_prefix }}#besok" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Besök</a>
+          <a href="{{ nav_prefix }}#viner" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Våra viner</a>
+          <a href="{{ blog_link }}" class="text-sm font-semibold {% if is_blog_active %}text-vine-700 border-b-2 border-vine-600 pb-0.5{% else %}text-slate-900 hover:text-vine-700{% endif %}">Blogg</a>
+          <a href="{{ nav_prefix }}#nyhetsbrev" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Nyhetsbrev</a>
+          <a href="{{ nav_prefix }}#kontakt" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Kontakt</a>
+        </div>
+        <div data-lang="en" class="hidden flex items-center gap-x-8">
+          <a href="{{ nav_prefix }}#om" class="text-sm font-semibold text-slate-900 hover:text-vine-700">About</a>
+          <a href="{{ nav_prefix }}#besok" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Visits</a>
+          <a href="{{ nav_prefix }}#viner" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Wines</a>
+          <a href="{{ blog_link }}" class="text-sm font-semibold {% if is_blog_active %}text-vine-700 border-b-2 border-vine-600 pb-0.5{% else %}text-slate-900 hover:text-vine-700{% endif %}">Blog</a>
+          <a href="{{ nav_prefix }}#nyhetsbrev" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Newsletter</a>
+          <a href="{{ nav_prefix }}#kontakt" class="text-sm font-semibold text-slate-900 hover:text-vine-700">Contact</a>
+        </div>
+
+        <!-- Language switch (desktop) -->
+        <div class="ml-2 flex items-center gap-2 border-l border-slate-200 pl-6">
+          <button
+            id="btn-sv"
+            type="button"
+            class="rounded-full border border-slate-300 bg-slate-900 px-3 py-1.5 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2"
+            aria-pressed="true"
+          >Svenska</button>
+          <button
+            id="btn-en"
+            type="button"
+            class="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-900 shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2"
+            aria-pressed="false"
+          >English</button>
+        </div>
+      </div>
+
+      <!-- Mobile controls -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button id="btn-sv-mobile" type="button" class="rounded-full border border-slate-300 bg-slate-900 px-3 py-1.5 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2" aria-pressed="true">SV</button>
+        <button id="btn-en-mobile" type="button" class="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-900 shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2" aria-pressed="false">EN</button>
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-slate-900">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile menu -->
+  <el-dialog>
+    <dialog id="mobile-menu" class="m-0 p-0 backdrop:bg-black/30 lg:hidden">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10">
+          <div class="flex items-center justify-between">
+            <a href="{{ brand_href }}" class="-m-1.5 p-1.5 flex items-center gap-3">
+              <span class="sr-only">Mörtviks Vingård</span>
+              <div class="grid h-10 w-10 place-items-center rounded-xl bg-vine-100 text-vine-700" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3c2.5 0 4.5 1.8 4.5 4.2 0 1-.4 1.9-1 2.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M13 3c0 3-2.5 4.5-5.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="8" cy="12" r="2.2" fill="currentColor" opacity="0.9"/>
+                  <circle cx="14" cy="12" r="2.2" fill="currentColor" opacity="0.9"/>
+                  <circle cx="11" cy="16.5" r="2.2" fill="currentColor" opacity="0.9"/>
+                  <circle cx="17" cy="16.5" r="2.2" fill="currentColor" opacity="0.9"/>
+                </svg>
+              </div>
+              <div class="leading-tight">
+                <p class="text-xs text-slate-600">Vingård i Västervik</p>
+                <p class="text-sm font-semibold tracking-tight">Mörtviks Vingård</p>
+              </div>
+            </a>
+            <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-slate-900">
+              <span class="sr-only">Close menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
+                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-slate-200">
+              <div class="space-y-2 py-6">
+                <div data-lang="sv" class="space-y-2">
+                  <a href="{{ nav_prefix }}#om" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Om</a>
+                  <a href="{{ nav_prefix }}#besok" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Besök</a>
+                  <a href="{{ nav_prefix }}#viner" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Våra viner</a>
+                  <a href="{{ blog_link }}" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold {% if is_blog_active %}text-vine-700 bg-vine-50{% else %}text-slate-900 hover:bg-slate-50{% endif %}">Blogg</a>
+                  <a href="{{ nav_prefix }}#nyhetsbrev" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Nyhetsbrev</a>
+                  <a href="{{ nav_prefix }}#kontakt" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Kontakt</a>
+                </div>
+                <div data-lang="en" class="hidden space-y-2">
+                  <a href="{{ nav_prefix }}#om" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">About</a>
+                  <a href="{{ nav_prefix }}#besok" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Visits</a>
+                  <a href="{{ nav_prefix }}#viner" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Wines</a>
+                  <a href="{{ blog_link }}" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold {% if is_blog_active %}text-vine-700 bg-vine-50{% else %}text-slate-900 hover:bg-slate-50{% endif %}">Blog</a>
+                  <a href="{{ nav_prefix }}#nyhetsbrev" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Newsletter</a>
+                  <a href="{{ nav_prefix }}#kontakt" command="close" commandfor="mobile-menu" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-slate-900 hover:bg-slate-50">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+</header>
