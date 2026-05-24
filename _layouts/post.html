@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<main class="pt-24">
+  <div class="w-full bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-5xl">
+      <img
+        src="../images/{{ page.hero_image }}"
+        alt="{{ page.hero_image_alt }}"
+        class="w-full max-h-[520px] object-contain object-center"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <nav aria-label="Breadcrumb" class="mb-8 flex items-center gap-2 text-sm text-slate-500">
+      <a href="../index.html" class="hover:text-slate-700">Mörtviks Vingård</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html" class="hover:text-slate-700">
+        <span data-lang="sv">Blogg</span>
+        <span data-lang="en" class="hidden">Blog</span>
+      </a>
+      <span aria-hidden="true">›</span>
+      <span data-lang="sv" class="text-slate-900 font-medium">{{ page.title }}</span>
+      <span data-lang="en" class="hidden text-slate-900 font-medium">{{ page.title_en }}</span>
+    </nav>
+
+    {{ content }}
+
+    <nav aria-label="Post navigation" class="mt-12 border-t border-slate-200 pt-8">
+      <div class="flex items-center justify-between">
+        <div></div>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50 transition-colors"
+        >
+          <span data-lang="sv">← Alla inlägg</span>
+          <span data-lang="en" class="hidden">← All posts</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</main>

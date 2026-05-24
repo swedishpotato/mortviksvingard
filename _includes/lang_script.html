@@ -1,0 +1,49 @@
+<script>
+  const btnSv = document.getElementById("btn-sv");
+  const btnEn = document.getElementById("btn-en");
+  const btnSvMobile = document.getElementById("btn-sv-mobile");
+  const btnEnMobile = document.getElementById("btn-en-mobile");
+  const langBlocks = Array.from(document.querySelectorAll("[data-lang]"));
+  const descSv = {{ page.description_sv | default: site.description | jsonify }};
+  const descEn = {{ page.description_en | default: site.description | jsonify }};
+
+  function setLang(lang) {
+    const meta = document.getElementById("meta-desc");
+    if (meta) {
+      meta.setAttribute(
+        "content",
+        lang === "sv"
+          ? descSv
+          : descEn
+      );
+    }
+    langBlocks.forEach((el) => {
+      el.classList.toggle("hidden", el.getAttribute("data-lang") !== lang);
+    });
+    const svActive = lang === "sv";
+    btnSv?.setAttribute("aria-pressed", svActive ? "true" : "false");
+    btnEn?.setAttribute("aria-pressed", svActive ? "false" : "true");
+    if (btnSv) btnSv.className = "rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2 " + (svActive ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-slate-50");
+    if (btnEn) btnEn.className = "rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2 " + (!svActive ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-slate-50");
+    btnSvMobile?.setAttribute("aria-pressed", svActive ? "true" : "false");
+    btnEnMobile?.setAttribute("aria-pressed", svActive ? "false" : "true");
+    if (btnSvMobile) btnSvMobile.className = "rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2 " + (svActive ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-slate-50");
+    if (btnEnMobile) btnEnMobile.className = "rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-vine-600 focus:ring-offset-2 " + (!svActive ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-slate-50");
+    document.documentElement.lang = lang;
+    try { localStorage.setItem("mv_lang", lang); } catch (_) {}
+  }
+
+  btnSv?.addEventListener("click", () => setLang("sv"));
+  btnEn?.addEventListener("click", () => setLang("en"));
+  btnSvMobile?.addEventListener("click", () => setLang("sv"));
+  btnEnMobile?.addEventListener("click", () => setLang("en"));
+
+  const saved = (() => { try { return localStorage.getItem("mv_lang"); } catch (_) { return null; } })();
+  setLang(saved === "en" ? "en" : "sv");
+
+  const y = new Date().getFullYear();
+  const yearEl = document.getElementById("year");
+  const year2El = document.getElementById("year2");
+  if (yearEl) yearEl.textContent = y;
+  if (year2El) year2El.textContent = y;
+</script>

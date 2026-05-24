@@ -1,0 +1,48 @@
+{% assign post = include.post %}
+{% assign heading_tag = include.heading | default: "h3" %}
+{% if include.in_blog_dir %}
+  {% assign post_url = post.url | split: "/" | last %}
+  {% assign post_img = "../images/" | append: post.preview_image %}
+{% else %}
+  {% assign post_url = post.url | remove_first: "/" %}
+  {% assign post_img = "images/" | append: post.preview_image %}
+{% endif %}
+<article class="group rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+  <a href="{{ post_url }}" class="block">
+    <div class="aspect-[3/2] overflow-hidden bg-slate-100">
+      <img
+        src="{{ post_img }}"
+        alt="{{ post.preview_image_alt }}"
+        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+  </a>
+  <div class="p-6">
+    <div data-lang="sv">
+      <p class="text-xs font-medium text-vine-700">{{ post.date_display_sv }}</p>
+      <{{ heading_tag }} class="mt-2 text-xl font-semibold text-slate-900 group-hover:text-vine-700 transition-colors">
+        <a href="{{ post_url }}">{{ post.title }}</a>
+      </{{ heading_tag }}>
+      <p class="mt-2 text-sm text-slate-600 line-clamp-3">
+        {{ post.summary_sv }}
+      </p>
+      <a href="{{ post_url }}" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-vine-700 hover:text-vine-600">
+        Läs mer <span aria-hidden="true">→</span>
+      </a>
+    </div>
+    <div data-lang="en" class="hidden">
+      <p class="text-xs font-medium text-vine-700">{{ post.date_display_en }}</p>
+      <{{ heading_tag }} class="mt-2 text-xl font-semibold text-slate-900 group-hover:text-vine-700 transition-colors">
+        <a href="{{ post_url }}">{{ post.title_en }}</a>
+      </{{ heading_tag }}>
+      <p class="mt-2 text-sm text-slate-600 line-clamp-3">
+        {{ post.summary_en }}
+      </p>
+      <a href="{{ post_url }}" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-vine-700 hover:text-vine-600">
+        Read more <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,10 @@
+title: Mörtviks Vingård
+description: En ny, småskalig vingård i Sverige.
+url: https://www.mortviksvingard.se
+baseurl: ""
+permalink: /blog/:slug.html
+timezone: Europe/Stockholm
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

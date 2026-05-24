@@ -1,0 +1,19 @@
+<footer class="border-t border-slate-200 bg-white{% if page.layout == 'post' or page.is_blog_page %} mt-8{% endif %}">
+  <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-sm text-slate-600">
+        {% if page.layout == "post" or page.is_blog_page %}
+          <a href="../index.html" class="font-medium text-slate-900 hover:text-vine-700">Mörtviks Vingård</a>
+        {% else %}
+          <span class="font-medium text-slate-900">Mörtviks Vingård</span>
+        {% endif %}
+        <span class="mx-2 text-slate-300">•</span>
+        Stora Mörtvik, 593 96&nbsp;Västervik, Sweden
+      </p>
+      <p class="text-sm text-slate-500">
+        <span data-lang="sv">© <span id="year"></span> – Alla rättigheter förbehållna.</span>
+        <span data-lang="en" class="hidden">© <span id="year2"></span> – All rights reserved.</span>
+      </p>
+    </div>
+  </div>
+</footer>
