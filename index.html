@@ -357,27 +357,23 @@ leaflet: true
 
     <!-- Blog post cards -->
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {% for post in site.posts limit:3 %}
+      {% for post in site.posts limit:6 %}
         {% include blog_card.html post=post in_blog_dir=false %}
       {% endfor %}
+    </div>
 
-      <!-- "More posts coming" placeholder card -->
-      <div class="rounded-2xl border border-dashed border-slate-300 bg-white/60 p-6 flex flex-col items-center justify-center text-center min-h-[280px]">
-        <div class="grid h-12 w-12 place-items-center rounded-full bg-vine-100 text-vine-700 mb-4">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-        <div data-lang="sv">
-          <p class="text-sm font-semibold text-slate-700">Fler inlägg på väg</p>
-          <p class="mt-1 text-xs text-slate-500">Vi berättar mer om skörd, druvor och årstider allt eftersom vingården växer.</p>
-        </div>
-        <div data-lang="en" class="hidden">
-          <p class="text-sm font-semibold text-slate-700">More posts coming</p>
-          <p class="mt-1 text-xs text-slate-500">We'll share more about harvests, grapes, and seasons as the vineyard grows.</p>
-        </div>
+    <!-- Bottom link to all posts -->
+    <div class="mt-12 flex justify-center">
+      <div data-lang="sv">
+        <a href="blog/index.html" class="inline-flex items-center gap-1 text-sm font-semibold text-vine-700 hover:text-vine-600">
+          Alla inlägg <span aria-hidden="true">→</span>
+        </a>
       </div>
-
+      <div data-lang="en" class="hidden">
+        <a href="blog/index.html" class="inline-flex items-center gap-1 text-sm font-semibold text-vine-700 hover:text-vine-600">
+          All posts <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -590,14 +586,18 @@ leaflet: true
      ========================================================= -->
 <section id="logos" class="bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div
-      class="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5"
-    >
-      <img width="158" height="48" src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg" alt="Transistor" class="col-span-2 max-h-12 w-full object-contain lg:col-span-1">
-      <img width="158" height="48" src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg" alt="Reform" class="col-span-2 max-h-12 w-full object-contain lg:col-span-1">
-      <img width="158" height="48" src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg" alt="Tuple" class="col-span-2 max-h-12 w-full object-contain lg:col-span-1">
-      <img width="158" height="48" src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg" alt="SavvyCal" class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1">
-      <img width="158" height="48" src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg" alt="Statamic" class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1">
+    <div class="mx-auto max-w-2xl text-center mb-12">
+      <div data-lang="sv">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Medlemskap och Partner</h2>
+      </div>
+      <div data-lang="en" class="hidden">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Memberships and Partners</h2>
+      </div>
+    </div>
+    <div class="mx-auto flex justify-center">
+      <a href="https://svensktvin.se/" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+        <img src="images/fsv-logo-branschorg.svg" alt="Svenskt Vin" class="h-16 w-auto object-contain">
+      </a>
     </div>
   </div>
 </section>
