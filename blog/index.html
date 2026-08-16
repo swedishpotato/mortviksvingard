@@ -36,26 +36,5 @@ is_blog_page: true
     {% for post in site.posts %}
       {% include blog_card.html post=post in_blog_dir=true heading="h2" %}
     {% endfor %}
-
-        <!-- "More posts coming" placeholder -->
-        <div class="rounded-2xl border border-dashed border-slate-300 bg-white/60 p-8 flex flex-col items-center justify-center text-center min-h-[300px]">
-          <div class="grid h-12 w-12 place-items-center rounded-full bg-vine-100 text-vine-700 mb-4">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div data-lang="sv">
-            <p class="text-sm font-semibold text-slate-700">Fler inlägg på väg</p>
-            <p class="mt-2 text-xs text-slate-500 max-w-xs">
-              Vi berättar mer om skörd, druvor och årstider allt eftersom vingården växer.
-            </p>
-          </div>
-          <div data-lang="en" class="hidden">
-            <p class="text-sm font-semibold text-slate-700">More posts coming</p>
-            <p class="mt-2 text-xs text-slate-500 max-w-xs">
-              We'll share more about harvests, grapes, and seasons as the vineyard grows.
-            </p>
-          </div>
-        </div>
   </div>
 </main>
